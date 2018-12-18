@@ -3,20 +3,17 @@
 
 # ----------------------------------------------------------------------------
 # tuner.py
-# version 2.4
+
 # ----------------------------------------------------------------------------
 
 # ----------------------------------------------------------------------------
-# "THE BEER-WARE LICENSE" (Revision 42):
-# <jerome@jolimont.fr> wrote this file. As long as you retain this notice you 
-# can do whatever you want with this stuff. If we meet some day, and you think 
-# this stuff is worth it, you can buy me a beer in return.
-# Jérôme Lafréchoux 
+
 # ----------------------------------------------------------------------------
 
-"""This module creates a keyboard emitting notes to tune a music instrument
-Class Tuner creates a tuner : a keyboard and a few controls
-"""
+""" The program below is a accurate and professional guitar tuner that emits all the notes from E to E and everything in between"""
+"""Every section of code is explained in double quotes"""
+
+
 
 from gi.repository import Gtk, GObject, Gdk
 from subprocess import Popen
@@ -247,7 +244,6 @@ class _Key(Gtk.Box):
         self._play_button = Gtk.Button(stock=Gtk.STOCK_MEDIA_PLAY)
         # Hack to remove label from stock button
         # http://faq.pygtk.org/index.py?req=show&file=faq09.005.htp
-        # TODO : Register new stock. Couldn't get that to work, yet.
         self._play_button.get_children()[0].get_children()[0].get_children()[1].set_text('')
         self.pack_start(self._play_button, True, True, 0)
         self._play_button.show()
